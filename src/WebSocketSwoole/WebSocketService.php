@@ -12,7 +12,7 @@
  * @author xuanskyer | <furthestworld@icloud.com>
  * @time   2016-9-13 10:56:41
  */
-namespace SwooleWebSocket;
+namespace WebSocketSwoole;
 
 class WebSocketService {
 
