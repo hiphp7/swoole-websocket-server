@@ -1,5 +1,5 @@
 {
-    "name": "furthestWorld/swoole-webSocket-server",
+    "name": "furthestworld/swoole-websocket-server",
     "description": "A swoole webSocket server",
     "require": {
         "php": ">=5.5"
