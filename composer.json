@@ -1,0 +1,13 @@
+{
+    "name": "furthestWorld/swoole-webSocket-server",
+    "description": "A swoole webSocket server",
+    "require": {
+        "php": ">=5.5"
+    },
+    "authors": [
+        {
+            "name": "xuanskyer",
+            "email": "furthestworld@icloud.com"
+        }
+    ],
+}
