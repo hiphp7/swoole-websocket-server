@@ -6,6 +6,6 @@
  * User: 张鹏玄 | <zhangpengxuan@yundun.com>
  * Date: 2016/9/13 11:19
  */
-require 'src/SwooleWebSocket/WebSocketService.php';
-$demoService = new \SwooleWebSocket\WebSocketService();
+require 'src/WebSocketSwoole/WebSocketService.php';
+$demoService = new \WebSocketSwoole\WebSocketService();
 $demoService->run();
