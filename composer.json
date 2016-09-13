@@ -9,5 +9,6 @@
             "name": "xuanskyer",
             "email": "furthestworld@icloud.com"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }
