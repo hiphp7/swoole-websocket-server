@@ -7,5 +7,5 @@
  * Date: 2016/9/13 11:19
  */
 require 'src/SwooleWebSocket/WebSocketService.php';
-$demoService = new \FurthestWorld\SwooleWebSocket\WebSocketService();
+$demoService = new \SwooleWebSocket\WebSocketService();
 $demoService->run();
