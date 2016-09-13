@@ -18,7 +18,7 @@ class WebSocketService {
 
     public    $server    = null;
     public    $timer_arr = [];    //该变量保存所有的定时器任务ID，每一个客户端可以通过$timer_arr[客户端ID]得到该客户端建立的所有定时器
-    protected $conf      = [
+    public $conf      = [
         'host'            => '0.0.0.0',
         'port'            => 9999,                                  //服务使用端口
         'worker_num'      => 2,                                     //启动worker进程数
@@ -65,7 +65,7 @@ class WebSocketService {
      * @param $server
      * @param $request
      */
-    protected function open($server, $request) {
+    public function open($server, $request) {
         $data = [
             'client_id' => $request->fd,
             'request'   => $request
@@ -78,7 +78,7 @@ class WebSocketService {
      * @param $server
      * @param $frame
      */
-    protected function message($server, $frame) {
+    public function message($server, $frame) {
         $data = [
             'client_id' => $frame->fd,
             'data'      => $frame->data,
@@ -94,7 +94,7 @@ class WebSocketService {
      * @param $from_id
      * @param $data
      */
-    protected function task($server, $task_id, $from_id, $data) {
+    public function task($server, $task_id, $from_id, $data) {
         $data['task_id'] = $task_id;
         $data['from_id'] = $from_id;
         $this->doTask($data);
@@ -106,7 +106,7 @@ class WebSocketService {
      * @param $taskId    任务进程ID
      * @param $data
      */
-    protected function finish($server, $taskId, $data) {
+    public function finish($server, $taskId, $data) {
         $data['task_id'] = $taskId;
         $this->doFinish($data);
     }
@@ -116,7 +116,7 @@ class WebSocketService {
      * @param $server        服务器对象
      * @param $client_id     客户端唯一标识
      */
-    protected function close($server, $client_id) {
+    public function close($server, $client_id) {
         $data = [
             'client_id' => $client_id
         ];
@@ -200,7 +200,7 @@ class WebSocketService {
      * @param $client_id
      * @param $msg
      */
-    protected function sendMsgToClient($client_id, $msg) {
+    public function sendMsgToClient($client_id, $msg) {
         echo "发送信息给客户端：{$client_id} | {$msg['action']['name']} | " . date('Y-m-d H:i:s') . "\r\n";
         $this->server->push($client_id, json_encode($msg));
     }
@@ -209,7 +209,7 @@ class WebSocketService {
      * 关闭客户端链接
      * @param $client_id
      */
-    protected function closeClient($client_id) {
+    public function closeClient($client_id) {
         $this->server->close($client_id);
     }
 
@@ -218,7 +218,7 @@ class WebSocketService {
      * @param $client_id
      * @param $tick_time
      */
-    protected function addTimer($client_id, $tick_time) {
+    public function addTimer($client_id, $tick_time) {
         //暂未实现,先使用swoole原生写法
     }
 
@@ -227,7 +227,7 @@ class WebSocketService {
      * @param $client_id
      * @param $arr
      */
-    protected function clearTimer($client_id, &$arr) {
+    public function clearTimer($client_id, &$arr) {
         if (is_array($arr)) {
             foreach ($arr[$client_id] as $val) {
                 if (is_array($val)) {

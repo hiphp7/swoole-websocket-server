@@ -1,5 +1,5 @@
 {
-  "name": "furthestworld/swoole-websocket-server",
+  "name": "furthestworld/swoolewebsocket",
   "description": "A swoole webSocket server",
   "keywords": [
     "swoole",
