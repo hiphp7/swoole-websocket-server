@@ -1,22 +1,24 @@
 {
-  "name": "furthestworld/swoole-websocket-server",
-  "description": "A swoole webSocket server",
-  "keywords": [
-    "swoole",
-    "webSocket"
-  ],
-  "require": {
-    "php": ">=5.5"
-  },
-  "license": "MIT",
-"autoload": {
-        "psr-0": {"WebSocketSwoole": "src/"}
+    "name": "furthestworld/swoole-websocket-server",
+    "description": "A swoole webSocket server",
+    "keywords": [
+        "swoole",
+        "webSocket"
+    ],
+    "require": {
+        "php": ">=5.5"
     },
-  "authors": [
-    {
-      "name": "xuanskyer",
-      "email": "furthestworld@icloud.com"
-    }
-  ],
-  "minimum-stability": "dev"
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "WebSocketSwoole": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "xuanskyer",
+            "email": "furthestworld@icloud.com"
+        }
+    ],
+    "minimum-stability": "dev"
 }
